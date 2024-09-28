@@ -107,7 +107,7 @@
       <workItem from="1726903402663" duration="5592000" />
       <workItem from="1726919740578" duration="14533000" />
       <workItem from="1727531545440" duration="74000" />
-      <workItem from="1727531706829" duration="241000" />
+      <workItem from="1727531706829" duration="675000" />
     </task>
     <task id="LOCAL-00001" summary="made comments">
       <option name="closed" value="true" />
@@ -133,7 +133,31 @@
       <option name="project" value="LOCAL" />
       <updated>1727531446784</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="removed TODO in the CellTax class">
+      <option name="closed" value="true" />
+      <created>1727532005708</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1727532005708</updated>
+    </task>
+    <task id="LOCAL-00005" summary="removed TODO in the CellTax class">
+      <option name="closed" value="true" />
+      <created>1727532015702</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1727532015702</updated>
+    </task>
+    <task id="LOCAL-00006" summary="removed TODO in the CellTax class">
+      <option name="closed" value="true" />
+      <created>1727532230152</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1727532230152</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -153,6 +177,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="первый комит" />
     <MESSAGE value="made comments" />
+    <MESSAGE value="внес изменения" />
     <MESSAGE value="removed TODO in the CellTax class" />
     <option name="LAST_COMMIT_MESSAGE" value="removed TODO in the CellTax class" />
   </component>

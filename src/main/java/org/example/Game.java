@@ -60,8 +60,8 @@ public class Game {
                         ((CellChance) board.info(player.getPosition())).drawCard(player);
                     } else if (board.info(player.getPosition()) instanceof CellJail){
                         ((CellJail) board.info(player.getPosition())).jail(player);
-
-
+                    } else if (board.info(player.getPosition()) instanceof CellTax) {
+                        ((CellTax) board.info(player.getPosition())).tax(player);
                     }
                 } else if (player.getPrisonKey()>0){
                     System.out.println("Игрок" + player.getPlayerName() + " пропускает ход");
