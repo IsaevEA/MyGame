@@ -9,16 +9,18 @@ public class CellTax  extends Cell {
 
     public void tax(Player player){
         //TODO переделать на switch case
-        if (getPosition() == 8 || getPosition() == 21){
-            if (player.getBalance() >= 45){
-                player.setBalance(player.getBalance() - 45);
-            }else player.setBlocked(true);
-        } else if (getPosition() == 13 || getPosition() == 33) {
-            if (player.getBalance() >= 70){
-                player.setBalance(player.getBalance() - 70);
-            }else player.setBlocked(true);
+        switch (getPosition()){
+            case 8 , 21:
+                if (player.getBalance() >= 45){
+                    player.setBalance(player.getBalance() - 45);
+                }else player.setBlocked(true);
+                break;
+            case 13 , 33:
+                if (player.getBalance() >= 70){
+                    player.setBalance(player.getBalance() - 70);
+                }else player.setBlocked(true);
+                break;
         }
-
     }
     @Override
     public String toString(){
