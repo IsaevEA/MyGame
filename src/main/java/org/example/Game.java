@@ -24,7 +24,7 @@ public class Game {
 
 
 
-
+        //TODO  разделить на методы
         while (players.size()>1){
             for (Player player : players.values()) {
                 System.out.println(player);

@@ -8,7 +8,6 @@ public class CellTax  extends Cell {
     }
 
     public void tax(Player player){
-        //TODO переделать на switch case
         switch (getPosition()){
             case 8 , 21:
                 if (player.getBalance() >= 45){
