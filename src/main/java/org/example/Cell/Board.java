@@ -54,6 +54,11 @@ public class Board {
         return properties[a];
 
     }
+    public void printInfo(){
+        for(int i = 0; i<properties.length; i++){
+            System.out.println(properties[i]);
+        }
+    }
 
 
 }
