@@ -30,7 +30,7 @@ public class CellProperty extends Cell {
                 System.out.println("козна помогла вам купить данный объект");
                 player.setChance(player.getChance()-1);
             }else if (answer == 2) {
-                System.out.println("Вы отказались от помощи козны и вы выбываете");
+                System.out.println("Вы отказались от помощи козны");
             }else {
                 System.out.println("Нет такой команды");
             }

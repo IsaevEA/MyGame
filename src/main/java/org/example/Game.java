@@ -4,72 +4,119 @@ import org.example.Cell.*;
 
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
 import java.util.Scanner;
 
 public class Game {
+    private Map<String, Player> players = new HashMap<>();
+    private Board board = new Board();
+    private Scanner scanner = new Scanner(System.in);
+
     public void startGame() throws IOException, InterruptedException {
         new GameHistory().play();
-        Cell cell = new Cell();
-        Board board = new Board();
-        Map<String, Player> players = new HashMap<>();
-        Scanner scanner = new Scanner(System.in);
+
+        initializePlayers();
+
+        while (players.size() > 1) {
+            playTurns();
+        }
+    }
+
+    private void initializePlayers() {
         System.out.println("Сколько будет игроков?");
-        int a = scanner.nextInt();
-        for (int i = 0; i < a; i++) {
-            System.out.println("Введите имя игрока под №" + (i + 1));
-            String playerName = scanner.next();
-            players.put(playerName, new Player(playerName));
-        }
+        int playerCount = scanner.nextInt();
 
-
-
-        //TODO  разделить на методы
-        while (players.size()>1){
-            for (Player player : players.values()) {
-                System.out.println(player);
-                if (player.isBlocked()) {
-                    players.remove(player.getPlayerName());
-                }
-                if (!player.isBlocked()&& player.getPrisonKey() == 0) {
-                    System.out.println(player.getPlayerName() + " делает ход");
-                    int newPosition = player.getPosition() + Gran.roll();
-                    if (newPosition < board.getProperties().length){
-                        player.setPosition(newPosition);
-
-                        System.out.println(board.info(player.getPosition()));
-                    }else {
-                        player.setPosition(player.getPosition() + Gran.roll() - board.getProperties().length);
-                        System.out.println(board.info(player.getPosition()));
-                    }
-                    if (board.info(player.getPosition()) instanceof CellProperty){
-                        if (((CellProperty) board.info(player.getPosition())).getOwner() == null){
-                            System.out.println("Данная ячейка продается в аукционе, хотите приобрести?(1-да/2-нет)");
-                            int question = scanner.nextInt();
-                            if (question == 1){
-                                ((CellProperty) board.info(player.getPosition())).purchase(player);
-                            } else if (question == 2) {
-                                System.out.println("продолжайте игру");
-                            }
-                        }else {
-                            System.out.println("Данная ячейка принадлежит игроку: " + ((CellProperty) board.info(player.getPosition())).getOwner());
-                            System.out.println("Вам необходимо внести оплату за аренду " + ((CellProperty) board.info(player.getPosition())).getRent());
-                            ((CellProperty) board.info(player.getPosition())).payRent(player);
-                        }
-                    } else if (board.info(player.getPosition()) instanceof CellChance) {
-                        ((CellChance) board.info(player.getPosition())).drawCard(player);
-                    } else if (board.info(player.getPosition()) instanceof CellJail){
-                        ((CellJail) board.info(player.getPosition())).jail(player);
-                    } else if (board.info(player.getPosition()) instanceof CellTax) {
-                        ((CellTax) board.info(player.getPosition())).tax(player);
-                    }
-                } else if (player.getPrisonKey()>0){
-                    System.out.println("Игрок" + player.getPlayerName() + " пропускает ход");
-                    player.setPrisonKey(player.getPrisonKey()-1);
-                }
-
-                Thread.sleep(1000);
+        if (playerCount > 1) {
+            for (int i = 0; i < playerCount; i++) {
+                System.out.println("Введите имя игрока под №" + (i + 1));
+                String playerName = scanner.next();
+                players.put(playerName, new Player(playerName));
             }
+        } else {
+            System.out.println("недопустимое значение");
         }
+    }
+
+    private void playTurns() throws InterruptedException {
+        Iterator<Player> iterator = players.values().iterator();
+        while (iterator.hasNext()) {
+            Player player = iterator.next();
+            System.out.println(player);
+
+            if (player.isBlocked()) {
+                iterator.remove();
+                continue;
+            }
+
+            if (player.getPrisonKey() == 0) {
+                takeTurn(player);
+            } else {
+                skipTurn(player);
+            }
+
+            Thread.sleep(1000);
+        }
+    }
+
+    private void takeTurn(Player player) {
+        System.out.println(player.getPlayerName() + " делает ход");
+        int newPosition = player.getPosition() + Gran.roll();
+        updatePlayerPosition(player, newPosition);
+
+        Cell currentCell = board.info(player.getPosition());
+
+        if (currentCell instanceof CellProperty) {
+            handlePropertyCell((CellProperty) currentCell, player);
+        } else if (currentCell instanceof CellChance) {
+            ((CellChance) currentCell).drawCard(player);
+        } else if (currentCell instanceof CellJail) {
+            ((CellJail) currentCell).jail(player);
+        } else if (currentCell instanceof CellTax) {
+            ((CellTax) currentCell).tax(player);
+        }
+    }
+
+    private void updatePlayerPosition(Player player, int newPosition) {
+        if (newPosition < board.getProperties().length) {
+            player.setPosition(newPosition);
+        } else if (newPosition < 0) {
+            int adjustedPosition = newPosition + board.getProperties().length;
+            player.setPosition(adjustedPosition);
+        } else {
+            int adjustedPosition = newPosition - board.getProperties().length;
+            player.setPosition(adjustedPosition);
+        }
+        System.out.println(board.info(player.getPosition()));
+    }
+
+    private void handlePropertyCell(CellProperty property, Player player) {
+        if (property.getOwner() == null) {
+            offerPurchase(property, player);
+        } else {
+            chargeRent(property, player);
+        }
+    }
+
+    private void offerPurchase(CellProperty property, Player player) {
+        System.out.println("Данная ячейка продается в аукционе, хотите приобрести? (1 - да / 2 - нет)");
+        int response = scanner.nextInt();
+
+        if (response == 1) {
+            property.purchase(player);
+        } else {
+            System.out.println("Продолжайте игру.");
+        }
+    }
+
+    private void chargeRent(CellProperty property, Player player) {
+        System.out.println("Данная ячейка принадлежит игроку: " + property.getOwner());
+        System.out.println("Вам необходимо внести оплату за аренду " + property.getRent());
+        property.payRent(player);
+    }
+
+    private void skipTurn(Player player) {
+        System.out.println("Игрок " + player.getPlayerName() + " пропускает ход");
+        player.setPrisonKey(player.getPrisonKey() - 1);
     }
 }

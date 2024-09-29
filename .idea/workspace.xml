@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7c65726f-3101-4d46-be85-a142b7abdf2f" name="Changes" comment="removed TODO in the CellTax class" />
+    <list default="true" id="7c65726f-3101-4d46-be85-a142b7abdf2f" name="Changes" comment="класс Тах внес в цикл игры">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Cell/CellProperty.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Cell/CellProperty.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Gran.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Gran.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -22,7 +27,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="CellTax" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -51,7 +56,7 @@
   "keyToString": {
     "Application.Main.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "game",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -108,6 +113,7 @@
       <workItem from="1726919740578" duration="14533000" />
       <workItem from="1727531545440" duration="74000" />
       <workItem from="1727531706829" duration="675000" />
+      <workItem from="1727532384521" duration="4282000" />
     </task>
     <task id="LOCAL-00001" summary="made comments">
       <option name="closed" value="true" />
@@ -157,7 +163,15 @@
       <option name="project" value="LOCAL" />
       <updated>1727532230152</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="класс Тах внес в цикл игры">
+      <option name="closed" value="true" />
+      <created>1727532548059</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1727532548059</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -179,6 +193,7 @@
     <MESSAGE value="made comments" />
     <MESSAGE value="внес изменения" />
     <MESSAGE value="removed TODO in the CellTax class" />
-    <option name="LAST_COMMIT_MESSAGE" value="removed TODO in the CellTax class" />
+    <MESSAGE value="класс Тах внес в цикл игры" />
+    <option name="LAST_COMMIT_MESSAGE" value="класс Тах внес в цикл игры" />
   </component>
 </project>
