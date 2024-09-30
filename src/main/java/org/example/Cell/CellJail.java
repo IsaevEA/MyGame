@@ -5,7 +5,7 @@ import org.example.Player;
 public class CellJail extends Cell {
     public void jail(Player player){
         player.setPosition(9);
-        player.setPrisonKey(2);
+        player.setPrisonKey(1);
     }
 
     public CellJail(int position, String name) {

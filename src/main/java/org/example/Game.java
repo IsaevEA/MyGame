@@ -21,6 +21,10 @@ public class Game {
         while (players.size() > 1) {
             playTurns();
         }
+        if (players.size() == 1) {
+            System.out.println(players);
+            System.out.println("Поздравляем, вы прошли игру");
+        }
     }
 
     private void initializePlayers() {
