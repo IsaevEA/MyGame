@@ -4,8 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7c65726f-3101-4d46-be85-a142b7abdf2f" name="Changes" comment="изменения: цикл разделил на методы">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="7c65726f-3101-4d46-be85-a142b7abdf2f" name="Changes" comment="исправил логику">
+      <change beforePath="$PROJECT_DIR$/TextStart.txt" beforeDir="false" afterPath="$PROJECT_DIR$/TextStart.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Cell/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Cell/Board.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Cell/CellChance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Cell/CellChance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Cell/CellJail.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Cell/CellJail.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/GameHistory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/GameHistory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/NameCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Cell/NameCard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Player.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,7 +60,7 @@
   "keyToString": {
     "Application.Main.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "Class-Game",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -176,7 +183,15 @@
       <option name="project" value="LOCAL" />
       <updated>1727612582640</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="исправил логику">
+      <option name="closed" value="true" />
+      <created>1727685614394</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1727685614394</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -200,6 +215,8 @@
     <MESSAGE value="removed TODO in the CellTax class" />
     <MESSAGE value="класс Тах внес в цикл игры" />
     <MESSAGE value="изменения: цикл разделил на методы" />
-    <option name="LAST_COMMIT_MESSAGE" value="изменения: цикл разделил на методы" />
+    <MESSAGE value="подправил логику оплаты аренды и покупки дома, также добавил карты для инфо" />
+    <MESSAGE value="исправил логику" />
+    <option name="LAST_COMMIT_MESSAGE" value="исправил логику" />
   </component>
 </project>

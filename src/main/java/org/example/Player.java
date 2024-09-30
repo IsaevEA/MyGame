@@ -11,7 +11,7 @@ import java.util.Scanner;
 
 public class Player extends Thread{
     private String playerName;
-    private int balance = 1500;
+    private int balance = 1000;
     private int position = 0;
     private  int prisonKey = 0;
     private boolean isBlocked;

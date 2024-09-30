@@ -1,7 +1,6 @@
 package org.example.Cell;
 
 import lombok.*;
-import org.example.NameCard;
 import org.example.Player;
 
 @NoArgsConstructor
